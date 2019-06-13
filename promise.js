@@ -1,20 +1,21 @@
-function get(url) {
-  return new Promise((succeed, fail) => {
-    var req = new XMLHttpRequest();
-    req.open("GET", url, true);
-    req.addEventListener("load", () => {
-      console.log("end");
-      if (req.status < 400) succeed(req.responseText);
-      else fail(new Error("Request failed: " + req.statusText));
-    });
-    req.addEventListener("error", () => {
-      fail(new Error("Network error"));
-    });
-    req.send(null);
-  });
-}
+// not working
+// function get(url) {
+//   return new Promise((succeed, fail) => {
+//     var req = new XMLHttpRequest();
+//     req.open("GET", url, true);
+//     req.addEventListener("load", () => {
+//       console.log("end");
+//       if (req.status < 400) succeed(req.responseText);
+//       else fail(new Error("Request failed: " + req.statusText));
+//     });
+//     req.addEventListener("error", () => {
+//       fail(new Error("Network error"));
+//     });
+//     req.send(null);
+//   });
+// }
 
-get("http://marijnhaverbeke.nl/").then(console.log).catch();
+// get("http://marijnhaverbeke.nl/").then(console.log).catch();
 
 // Promise.all
 
